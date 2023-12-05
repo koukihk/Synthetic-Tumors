@@ -13,6 +13,7 @@ from monai.transforms import AsDiscrete,AsDiscreted,Compose,Invertd,SaveImaged
 from monai import transforms, data
 from networks.swin3d_unetrv2 import SwinUNETR as SwinUNETR_v2
 import nibabel as nib
+from medpy import metric
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -75,12 +76,7 @@ def cal_dice_nsd(pred, truth, spacing_mm=(1,1,1), tolerance=2):
     return (dice, nsd)
 
 def cal_sensitivity(pred, true):
-    tp = np.sum(np.logical_and(pred == 1, true == 1))
-    tn = np.sum(np.logical_and(pred != 1, true != 1))
-    fp = np.sum(np.logical_and(pred == 1, true != 1))
-    fn = np.sum(np.logical_and(pred != 1, true == 1))
-
-    sensitivity = tp / (tp + fn)
+    sensitivity = metric.sensitivity(pred, true)
     return sensitivity
 
 
@@ -200,7 +196,7 @@ def main():
     liver_nsd  = []
     tumor_dice = []
     tumor_nsd  = []
-    # tumor_sensitivity = []
+    tumor_sensitivity = []
     header = ['name', 'liver_dice', 'liver_nsd', 'tumor_dice', 'tumor_nsd']
     rows = []
 
@@ -227,19 +223,19 @@ def main():
 
             current_liver_dice, current_liver_nsd = cal_dice_nsd(val_outputs[1,...], val_labels[1,...], spacing_mm=spacing_mm)
             current_tumor_dice, current_tumor_nsd = cal_dice_nsd(val_outputs[2,...], val_labels[2,...], spacing_mm=spacing_mm)
-            # current_tumor_sensitivity = cal_sensitivity(val_outputs[2,...], val_labels[2,...])
+            current_tumor_sensitivity = cal_sensitivity(val_outputs[2,...], val_labels[2,...])
 
             liver_dice.append(current_liver_dice)
             liver_nsd.append(current_liver_nsd)
             tumor_dice.append(current_tumor_dice)
             tumor_nsd.append(current_tumor_nsd)
-            # tumor_sensitivity.append(current_tumor_sensitivity)
+            tumor_sensitivity.append(current_tumor_sensitivity)
 
             row = [name, current_liver_dice, current_liver_nsd, current_tumor_dice, current_tumor_nsd]
             rows.append(row)
 
             print(name, val_outputs[0].shape, \
-                'dice: [{:.3f}  {:.3f}]; nsd: [{:.3f}  {:.3f}]'.format(current_liver_dice, current_tumor_dice, current_liver_nsd, current_tumor_nsd),\
+                'dice: [{:.3f}  {:.3f}]; nsd: [{:.3f}  {:.3f}]; sen: [{:.3f}]'.format(current_liver_dice, current_tumor_dice, current_liver_nsd, current_tumor_nsd, current_tumor_sensitivity),\
                 'time {:.2f}s'.format(time.time() - start_time))
 
             # save the prediction
@@ -257,7 +253,7 @@ def main():
         print("liver nsd:", np.mean(liver_nsd))
         print("tumor dice:", np.mean(tumor_dice))
         print("tumor nsd",np.mean(tumor_nsd))
-        # print("tumor sensitivity", np.mean(tumor_sensitivity))
+        print("tumor sensitivity", np.mean(tumor_sensitivity))
 
         # save metrics to cvs file
         csv_save = os.path.join(args.save_dir, args.model_name, str(args.val_overlap))

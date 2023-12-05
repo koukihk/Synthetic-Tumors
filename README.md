@@ -1,6 +1,6 @@
 # **Synthetic Tumors - Personal Modifications and Replication Work in Progress**
 
-This forked repository encapsulates my personal modifications and ongoing replication endeavors based on the original repository available at https://github.com/MrGiovanni/SyntheticTumors. The primary focus of this replication effort lies in reproducing the findings detailed in the paper titled "Label-Free Liver Tumor Segmentation." The provided data tables showcase my attempts at replicating the reported results and conducting additional experiments as part of this replication process. It's important to note that the information presented here reflects my individual efforts to validate and reproduce the referenced paper's methods, and may deviate to an extent from the original work. **Furthermore, I'd like to emphasize that the ultimate ownership of the current paper and code accomplishments resides with the original author(s).** Updates and further details pertaining to this replication work will be continually added as the process unfolds.
+This forked repository encapsulates my personal modifications and ongoing replication endeavors based on the original repository available at https://github.com/MrGiovanni/SyntheticTumors. The primary focus of this replication effort lies in reproducing the findings detailed in the paper titled "[Label-Free Liver Tumor Segmentation](https://arxiv.org/pdf/2303.14869.pdf)." The provided data tables showcase my attempts at replicating the reported results and conducting additional experiments as part of this replication process. It's important to note that the information presented here reflects my individual efforts to validate and reproduce the referenced paper's methods, and may deviate to an extent from the original work. **Furthermore, the ultimate ownership of the current paper and code accomplishments resides with the original authors.** Updates and further details pertaining to this replication work will be continually added as the process unfolds.
 
 ## Default Evaluation
 
@@ -13,6 +13,7 @@ This forked repository encapsulates my personal modifications and ongoing replic
 |      Tumor Dice       | **0.57766** - 0.5981 |    **0.55722** - 0.5594     |     **0.53344** - 0.5594      |      **0.54794** - 0.5637      |     **0.52479** - 0.5510      |
 |       Tumor Nsd       | **0.61974** - 0.6128 |    **0.60019** - 0.5820     |     **0.57556** - 0.5820      |      **0.57665** - 0.5824      |     **0.54078** - 0.5561      |
 | Detection Sensitivity |          /           |          / - 0.832          |           / - 0.832           |           / - 0.814            |           / - 0.85            |
+
 */: No data available for this item.*
 
 *-x: The item represents the original data in the paper.*
