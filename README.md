@@ -1,6 +1,6 @@
 # **Synthetic Tumors - Personal Modifications and Replication Work in Progress**
 
-This forked repository encapsulates my personal modifications and ongoing replication endeavors based on the original repository available at https://github.com/MrGiovanni/SyntheticTumors. The primary focus of this replication effort lies in reproducing the findings detailed in the paper titled "Label-Free Liver Tumor Segmentation." The provided data tables showcase my attempts at replicating the reported results and conducting additional experiments as part of this replication process. It's important to note that the information presented here reflects my individual efforts to validate and reproduce the referenced paper's methods, and may deviate to an extent from the original work. **Furthermore, the ultimate ownership of the current paper and code accomplishments resides with the original authors.** Updates and further details pertaining to this replication work will be continually added as the process unfolds.
+This forked repository encapsulates my personal modifications and ongoing replication endeavors based on the original repository available at https://github.com/MrGiovanni/SyntheticTumors. The primary focus of this replication effort lies in reproducing the findings detailed in the paper titled "Label-Free Liver Tumor Segmentation." The provided data tables showcase my attempts at replicating the reported results and conducting additional experiments as part of this replication process. It's important to note that the information presented here reflects my individual efforts to validate and reproduce the referenced paper's methods, and may deviate to an extent from the original work. **Furthermore, I'd like to emphasize that the ultimate ownership of the current paper and code accomplishments resides with the original author(s).** Updates and further details pertaining to this replication work will be continually added as the process unfolds.
 
 ## Default Evaluation
 
@@ -27,6 +27,7 @@ This forked repository encapsulates my personal modifications and ongoing replic
 |      Tumor Dice       | **0.53054** - 0.5763 | **0.55744** - 0.5902 - (0.5592)† | **0.59590** - 0.5902- (0.5592)† |      **0.55345** - 0.5849      |     **0.54777** - 0.5592      |
 |       Tumor Nsd       | **0.55023** - 0.5810 |       **0.59046** - 0.6082       |      **0.61910** - 0.6082       |      **0.59696** - 0.5986      |     **0.56614** - 0.5655      |
 | Detection Sensitivity |          /           |            / - 0.868             |            / - 0.868            |           / - 0.885            |           / - 0.858           |
+
 #### AI model trained by synthetic tumors(Self)
 
 |                       |  UNET (no.pretrain)  | Swin-UNETR-Base  (pretrain) | Swin-UNETR-Base (no.pretrain) | Swin-UNETR-Small (no.pretrain) | Swin-UNETR-Tiny (no.pretrain) |
@@ -55,27 +56,24 @@ This forked repository encapsulates my personal modifications and ongoing replic
 
 |   Metric   |   Fold 0    |   Fold 1    |   Fold 2    |   Fold 3    |   Fold 4    |         Ave          |
 | :--------: | :---------: | :---------: | :---------: | :---------: | :---------: | :------------------: |
-| Liver Dice | **0.95380** | **0.92759** | **0.95880** | **0.96200** | **0.95295** |     **0.95103**      |
-| Liver Nsd  | **0.87248** | **0.81121** | **0.87985** | **0.87865** | **0.88415** |     **0.86527**      |
-| Tumor Dice | **0.63622** | **0.52095** | **0.71753** | **0.54221** | **0.62109** | **0.60760** - 0.5686 |
-| Tumor Nsd  | **0.66810** | **0.49405** | **0.75098** | **0.56155** | **0.64695** | **0.62433** - 0.5606 |
+| Tumor Dice | **0.57777** | **0.56661** | **0.64459** | **0.57047** | **0.63288** | **0.59846** - 0.5686 |
+| Tumor Nsd  | **0.58179** | **0.49007** | **0.67298** | **0.57742** | **0.65024** | **0.59450** - 0.5606 |
 
 ## Small Tumor Detection
 
-|              | 0-5  | 5-10 | >10  |
-| :----------: | :--: | :--: | :--: |
-|    Truth     |  /   |  /   |  /   |
-|   Real G.    |  /   |  /   |  /   |
-| Synthetic G. |  /   |  /   |  /   |
+|              | 0-5(Tiny)  | 5-10(Small) | >10(Medium,Large) |
+| :----------: | :--------: | :---------: | :---------------: |
+|   Real G.    |     /      |      /      |         /         |
+| Synthetic G. | **0.6894** |      /      |         /         |
 
 ## Ablation Study on Shape Generation(Unet)
 
 | Tiny Size | Elastic Deformation | Edge Blurring | All Tumors DSC (%) | Small Tumors Det Sen. (%) |
 | :-------: | :-----------------: | :-----------: | :----------------: | :-----------------------: |
-|     √     |                     |               | **37.031** - 43.9  |         / - 26.4          |
-|     √     |                     |       √       | **55.593*** - 47.1 |         / - 51.3          |
-|     √     |          √          |               | **46.282** - 50.3  |         / - 54.1          |
-|           |          √          |       √       | **53.796** - 52.6  |         / - 33.4          |
-|     √     |          √          |       √       | **57.500** - 55.1  |         / - 61.8          |
+|     √     |                     |               | **37.031** - 43.9  |     **43.69** - 26.4      |
+|     √     |                     |       √       | **55.593** - 47.1  |     **63.01** - 51.3      |
+|     √     |          √          |               | **46.282** - 50.3  |     **37.00** - 54.1      |
+|           |          √          |       √       | **53.796** - 52.6  |     **56.98** - 33.4      |
+|     √     |          √          |       √       | **57.500** - 55.1  |     **66.76** - 61.8      |
 
 **:The model has not gone through the full 4000 epochs of training.*
