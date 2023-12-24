@@ -16,7 +16,7 @@ class TumorGenerated(RandomizableTransform, MapTransform):
     def __init__(self, 
     keys: KeysCollection, 
     prob: float = 0.1,
-    tumor_prob = [0.25, 0.25, 0.25, 0.25, 0.0],
+    tumor_prob = [0.2, 0.2, 0.2, 0.2, 0.2],
     allow_missing_keys: bool = False
     ) -> None:
         MapTransform.__init__(self, keys, allow_missing_keys)
@@ -88,6 +88,6 @@ class TumorGenerated(RandomizableTransform, MapTransform):
             # print(tumor_type, d['image'].shape, np.max(d['label']))
             # print("Image meta dict:", d["image_meta_dict"])
             # print("Label meta dict:", d["label_meta_dict"])
-            self.save_synthetic_data(d, tumor_type)
+            # self.save_synthetic_data(d, tumor_type)
 
         return d
