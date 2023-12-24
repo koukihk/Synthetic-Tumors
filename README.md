@@ -27,6 +27,7 @@ This forked repository encapsulates my personal modifications and ongoing replic
 |      Tumor Dice       | **0.53054** - 0.5763 | **0.55744** - 0.5902 - (0.5592)† | **0.59590** - 0.5902- (0.5592)† |      **0.55345** - 0.5849      |     **0.54777** - 0.5592      |
 |       Tumor Nsd       | **0.55023** - 0.5810 |       **0.59046** - 0.6082       |      **0.61910** - 0.6082       |      **0.59696** - 0.5986      |     **0.56614** - 0.5655      |
 | Detection Sensitivity |          /           |            / - 0.868             |            / - 0.868            |           / - 0.885            |           / - 0.858           |
+
 #### AI model trained by synthetic tumors(Self)
 
 |                       |  UNET (no.pretrain)  | Swin-UNETR-Base  (pretrain) | Swin-UNETR-Base (no.pretrain) | Swin-UNETR-Small (no.pretrain) | Swin-UNETR-Tiny (no.pretrain) |
