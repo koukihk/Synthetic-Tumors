@@ -13,13 +13,15 @@ from monai.transforms import AsDiscrete,AsDiscreted,Compose,Invertd,SaveImaged
 from monai import transforms, data
 from networks.swin3d_unetrv2 import SwinUNETR as SwinUNETR_v2
 import nibabel as nib
-from medpy import metric
+from medpy.metric.binary import sensitivity, specificity
 
 import warnings
 warnings.filterwarnings("ignore")
 
 import argparse
 parser = argparse.ArgumentParser(description='liver tumor validation')
+
+parser.add_argument('--syn', action='store_true')
 
 # file dir
 parser.add_argument('--val_dir', default=None, type=str)
@@ -75,9 +77,11 @@ def cal_dice_nsd(pred, truth, spacing_mm=(1,1,1), tolerance=2):
 
     return (dice, nsd)
 
-def cal_sensitivity(pred, true):
-    sensitivity = metric.sensitivity(pred, true)
-    return sensitivity
+def cal_sensitivity(pred, truth):
+    return sensitivity(pred, truth)
+
+def cal_specificity(pred, truth):
+    return specificity(pred, truth)
 
 
 def _get_model(args):
@@ -140,17 +144,30 @@ def _get_model(args):
 def _get_loader(args):
     val_data_dir = args.val_dir
     datalist_json = args.json_dir
-    val_org_transform = transforms.Compose(
-        [
-            transforms.LoadImaged(keys=["image", "label"]),
-            transforms.AddChanneld(keys=["image", "label"]),
-            transforms.Orientationd(keys=["image"], axcodes="RAS"),
-            transforms.Spacingd(keys=["image"], pixdim=(1.0, 1.0, 1.0), mode=("bilinear")),
-            transforms.ScaleIntensityRanged(keys=["image"], a_min=-21, a_max=189, b_min=0.0, b_max=1.0, clip=True),
-            transforms.SpatialPadd(keys=["image"], mode="minimum", spatial_size=[96, 96, 96]),
-            transforms.ToTensord(keys=["image", "label"]),
-        ]
-    )
+    if args.syn:
+        val_org_transform = transforms.Compose(
+            [
+                transforms.LoadImaged(keys=["image", "label"]),
+                transforms.AddChanneld(keys=["image", "label"]),
+                # transforms.Orientationd(keys=["image"], axcodes="RAS"),
+                # transforms.Spacingd(keys=["image"], pixdim=(1.0, 1.0, 1.0), mode=("bilinear")),
+                transforms.ScaleIntensityRanged(keys=["image"], a_min=-21, a_max=189, b_min=0.0, b_max=1.0, clip=True),
+                transforms.SpatialPadd(keys=["image"], mode="minimum", spatial_size=[96, 96, 96]),
+                transforms.ToTensord(keys=["image", "label"]),
+            ]
+        )
+    else:
+        val_org_transform = transforms.Compose(
+            [
+                transforms.LoadImaged(keys=["image", "label"]),
+                transforms.AddChanneld(keys=["image", "label"]),
+                transforms.Orientationd(keys=["image"], axcodes="RAS"),
+                transforms.Spacingd(keys=["image"], pixdim=(1.0, 1.0, 1.0), mode=("bilinear")),
+                transforms.ScaleIntensityRanged(keys=["image"], a_min=-21, a_max=189, b_min=0.0, b_max=1.0, clip=True),
+                transforms.SpatialPadd(keys=["image"], mode="minimum", spatial_size=[96, 96, 96]),
+                transforms.ToTensord(keys=["image", "label"]),
+            ]
+        )
     val_files = load_decathlon_datalist(datalist_json, True, "validation", base_dir=val_data_dir)
     val_org_ds = data.Dataset(val_files, transform=val_org_transform)
     val_org_loader = data.DataLoader(val_org_ds, batch_size=1, shuffle=False, num_workers=4, sampler=None, pin_memory=True)
@@ -197,7 +214,8 @@ def main():
     tumor_dice = []
     tumor_nsd  = []
     tumor_sensitivity = []
-    header = ['name', 'liver_dice', 'liver_nsd', 'tumor_dice', 'tumor_nsd']
+    tumor_specificity = []
+    header = ['name', 'liver_dice', 'liver_nsd', 'tumor_dice', 'tumor_nsd', 'tumor_sensitivity', 'tumor_specificity']
     rows = []
 
     model.eval()
@@ -224,18 +242,20 @@ def main():
             current_liver_dice, current_liver_nsd = cal_dice_nsd(val_outputs[1,...], val_labels[1,...], spacing_mm=spacing_mm)
             current_tumor_dice, current_tumor_nsd = cal_dice_nsd(val_outputs[2,...], val_labels[2,...], spacing_mm=spacing_mm)
             current_tumor_sensitivity = cal_sensitivity(val_outputs[2,...], val_labels[2,...])
+            current_tumor_specificity = cal_specificity(val_outputs[2, ...], val_labels[2, ...])
 
             liver_dice.append(current_liver_dice)
             liver_nsd.append(current_liver_nsd)
             tumor_dice.append(current_tumor_dice)
             tumor_nsd.append(current_tumor_nsd)
             tumor_sensitivity.append(current_tumor_sensitivity)
+            tumor_specificity.append(current_tumor_specificity)
 
-            row = [name, current_liver_dice, current_liver_nsd, current_tumor_dice, current_tumor_nsd]
+            row = [name, current_liver_dice, current_liver_nsd, current_tumor_dice, current_tumor_nsd, current_tumor_sensitivity, current_tumor_specificity]
             rows.append(row)
 
             print(name, val_outputs[0].shape, \
-                'dice: [{:.3f}  {:.3f}]; nsd: [{:.3f}  {:.3f}]; sen: [{:.3f}]'.format(current_liver_dice, current_tumor_dice, current_liver_nsd, current_tumor_nsd, current_tumor_sensitivity),\
+                'dice: [{:.3f}  {:.3f}]; nsd: [{:.3f}  {:.3f};]; sen: [{:.3f}]; spe: [{:.3f}]'.format(current_liver_dice, current_tumor_dice, current_liver_nsd, current_tumor_nsd, current_tumor_sensitivity, current_tumor_specificity),\
                 'time {:.2f}s'.format(time.time() - start_time))
 
             # save the prediction
@@ -252,8 +272,9 @@ def main():
         print("liver dice:", np.mean(liver_dice))
         print("liver nsd:", np.mean(liver_nsd))
         print("tumor dice:", np.mean(tumor_dice))
-        print("tumor nsd",np.mean(tumor_nsd))
-        print("tumor sensitivity", np.mean(tumor_sensitivity))
+        print("tumor nsd:",np.mean(tumor_nsd))
+        print("tumor sensitivity:", np.mean(tumor_sensitivity))
+        print("tumor specificity:", np.mean(tumor_specificity))
 
         # save metrics to cvs file
         csv_save = os.path.join(args.save_dir, args.model_name, str(args.val_overlap))
