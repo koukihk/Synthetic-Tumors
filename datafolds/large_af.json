@@ -1,0 +1,235 @@
+{
+    "description": "self_large",
+    "labels": {
+        "0": "background",
+        "1": "liver",
+        "2": "tumor"
+    },
+    "licence": "kouki",
+    "modality": {
+        "0": "CT"
+    },
+    "name": "self_large",
+    "numTraining": 0,
+    "numValid": 53,
+    "reference": "xxxx",
+    "release": "2023/12/13",
+    "tensorImageSize": "3D",
+    "training": [
+
+    ],
+    "validation": [
+        {
+            "image": "synt_af/large/img/0.nii.gz",
+            "label": "synt_af/large/label/0.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/1.nii.gz",
+            "label": "synt_af/large/label/1.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/2.nii.gz",
+            "label": "synt_af/large/label/2.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/3.nii.gz",
+            "label": "synt_af/large/label/3.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/4.nii.gz",
+            "label": "synt_af/large/label/4.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/5.nii.gz",
+            "label": "synt_af/large/label/5.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/6.nii.gz",
+            "label": "synt_af/large/label/6.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/7.nii.gz",
+            "label": "synt_af/large/label/7.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/8.nii.gz",
+            "label": "synt_af/large/label/8.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/9.nii.gz",
+            "label": "synt_af/large/label/9.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/10.nii.gz",
+            "label": "synt_af/large/label/10.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/11.nii.gz",
+            "label": "synt_af/large/label/11.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/12.nii.gz",
+            "label": "synt_af/large/label/12.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/13.nii.gz",
+            "label": "synt_af/large/label/13.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/14.nii.gz",
+            "label": "synt_af/large/label/14.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/15.nii.gz",
+            "label": "synt_af/large/label/15.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/16.nii.gz",
+            "label": "synt_af/large/label/16.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/17.nii.gz",
+            "label": "synt_af/large/label/17.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/18.nii.gz",
+            "label": "synt_af/large/label/18.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/19.nii.gz",
+            "label": "synt_af/large/label/19.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/20.nii.gz",
+            "label": "synt_af/large/label/20.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/21.nii.gz",
+            "label": "synt_af/large/label/21.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/22.nii.gz",
+            "label": "synt_af/large/label/22.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/23.nii.gz",
+            "label": "synt_af/large/label/23.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/24.nii.gz",
+            "label": "synt_af/large/label/24.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/25.nii.gz",
+            "label": "synt_af/large/label/25.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/26.nii.gz",
+            "label": "synt_af/large/label/26.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/27.nii.gz",
+            "label": "synt_af/large/label/27.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/28.nii.gz",
+            "label": "synt_af/large/label/28.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/29.nii.gz",
+            "label": "synt_af/large/label/29.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/30.nii.gz",
+            "label": "synt_af/large/label/30.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/31.nii.gz",
+            "label": "synt_af/large/label/31.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/32.nii.gz",
+            "label": "synt_af/large/label/32.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/33.nii.gz",
+            "label": "synt_af/large/label/33.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/34.nii.gz",
+            "label": "synt_af/large/label/34.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/35.nii.gz",
+            "label": "synt_af/large/label/35.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/36.nii.gz",
+            "label": "synt_af/large/label/36.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/37.nii.gz",
+            "label": "synt_af/large/label/37.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/38.nii.gz",
+            "label": "synt_af/large/label/38.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/39.nii.gz",
+            "label": "synt_af/large/label/39.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/40.nii.gz",
+            "label": "synt_af/large/label/40.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/41.nii.gz",
+            "label": "synt_af/large/label/41.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/42.nii.gz",
+            "label": "synt_af/large/label/42.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/43.nii.gz",
+            "label": "synt_af/large/label/43.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/44.nii.gz",
+            "label": "synt_af/large/label/44.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/45.nii.gz",
+            "label": "synt_af/large/label/45.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/46.nii.gz",
+            "label": "synt_af/large/label/46.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/47.nii.gz",
+            "label": "synt_af/large/label/47.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/48.nii.gz",
+            "label": "synt_af/large/label/48.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/49.nii.gz",
+            "label": "synt_af/large/label/49.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/50.nii.gz",
+            "label": "synt_af/large/label/50.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/51.nii.gz",
+            "label": "synt_af/large/label/51.nii.gz"
+        },
+        {
+            "image": "synt_af/large/img/52.nii.gz",
+            "label": "synt_af/large/label/52.nii.gz"
+        }
+    ]
+}

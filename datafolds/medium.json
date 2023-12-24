@@ -1,0 +1,283 @@
+{
+    "description": "self_medium",
+    "labels": {
+        "0": "background",
+        "1": "liver",
+        "2": "tumor"
+    },
+    "licence": "kouki",
+    "modality": {
+        "0": "CT"
+    },
+    "name": "self_medium",
+    "numTraining": 0,
+    "numValid": 65,
+    "reference": "xxxx",
+    "release": "2023/12/13",
+    "tensorImageSize": "3D",
+    "training": [
+
+    ],
+    "validation":[
+        {
+            "image": "synt/medium/img/0.nii.gz",
+            "label": "synt/medium/label/0.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/1.nii.gz",
+            "label": "synt/medium/label/1.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/2.nii.gz",
+            "label": "synt/medium/label/2.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/3.nii.gz",
+            "label": "synt/medium/label/3.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/4.nii.gz",
+            "label": "synt/medium/label/4.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/5.nii.gz",
+            "label": "synt/medium/label/5.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/6.nii.gz",
+            "label": "synt/medium/label/6.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/7.nii.gz",
+            "label": "synt/medium/label/7.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/8.nii.gz",
+            "label": "synt/medium/label/8.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/9.nii.gz",
+            "label": "synt/medium/label/9.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/10.nii.gz",
+            "label": "synt/medium/label/10.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/11.nii.gz",
+            "label": "synt/medium/label/11.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/12.nii.gz",
+            "label": "synt/medium/label/12.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/13.nii.gz",
+            "label": "synt/medium/label/13.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/14.nii.gz",
+            "label": "synt/medium/label/14.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/15.nii.gz",
+            "label": "synt/medium/label/15.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/16.nii.gz",
+            "label": "synt/medium/label/16.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/17.nii.gz",
+            "label": "synt/medium/label/17.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/18.nii.gz",
+            "label": "synt/medium/label/18.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/19.nii.gz",
+            "label": "synt/medium/label/19.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/20.nii.gz",
+            "label": "synt/medium/label/20.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/21.nii.gz",
+            "label": "synt/medium/label/21.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/22.nii.gz",
+            "label": "synt/medium/label/22.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/23.nii.gz",
+            "label": "synt/medium/label/23.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/24.nii.gz",
+            "label": "synt/medium/label/24.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/25.nii.gz",
+            "label": "synt/medium/label/25.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/26.nii.gz",
+            "label": "synt/medium/label/26.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/27.nii.gz",
+            "label": "synt/medium/label/27.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/28.nii.gz",
+            "label": "synt/medium/label/28.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/29.nii.gz",
+            "label": "synt/medium/label/29.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/30.nii.gz",
+            "label": "synt/medium/label/30.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/31.nii.gz",
+            "label": "synt/medium/label/31.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/32.nii.gz",
+            "label": "synt/medium/label/32.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/33.nii.gz",
+            "label": "synt/medium/label/33.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/34.nii.gz",
+            "label": "synt/medium/label/34.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/35.nii.gz",
+            "label": "synt/medium/label/35.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/36.nii.gz",
+            "label": "synt/medium/label/36.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/37.nii.gz",
+            "label": "synt/medium/label/37.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/38.nii.gz",
+            "label": "synt/medium/label/38.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/39.nii.gz",
+            "label": "synt/medium/label/39.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/40.nii.gz",
+            "label": "synt/medium/label/40.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/41.nii.gz",
+            "label": "synt/medium/label/41.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/42.nii.gz",
+            "label": "synt/medium/label/42.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/43.nii.gz",
+            "label": "synt/medium/label/43.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/44.nii.gz",
+            "label": "synt/medium/label/44.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/45.nii.gz",
+            "label": "synt/medium/label/45.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/46.nii.gz",
+            "label": "synt/medium/label/46.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/47.nii.gz",
+            "label": "synt/medium/label/47.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/48.nii.gz",
+            "label": "synt/medium/label/48.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/49.nii.gz",
+            "label": "synt/medium/label/49.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/50.nii.gz",
+            "label": "synt/medium/label/50.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/51.nii.gz",
+            "label": "synt/medium/label/51.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/52.nii.gz",
+            "label": "synt/medium/label/52.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/53.nii.gz",
+            "label": "synt/medium/label/53.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/54.nii.gz",
+            "label": "synt/medium/label/54.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/55.nii.gz",
+            "label": "synt/medium/label/55.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/56.nii.gz",
+            "label": "synt/medium/label/56.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/57.nii.gz",
+            "label": "synt/medium/label/57.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/58.nii.gz",
+            "label": "synt/medium/label/58.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/59.nii.gz",
+            "label": "synt/medium/label/59.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/60.nii.gz",
+            "label": "synt/medium/label/60.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/61.nii.gz",
+            "label": "synt/medium/label/61.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/62.nii.gz",
+            "label": "synt/medium/label/62.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/63.nii.gz",
+            "label": "synt/medium/label/63.nii.gz"
+        },
+        {
+            "image": "synt/medium/img/64.nii.gz",
+            "label": "synt/medium/label/64.nii.gz"
+        }
+    ]
+}
