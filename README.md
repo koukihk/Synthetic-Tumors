@@ -64,8 +64,8 @@ This forked repository encapsulates my personal modifications and ongoing replic
 | :------------: | :---------: | :---------: | :-----------: | :--------: |
 |  Sample Num.   |     134     |     111     |      139      |     53     |
 |   Real Sen.    | **0.45.93** | **0.7870**  |  **0.7612**   | **0.6776** |
-| Synthetic Sen. | **0.6734**  | **0.8815**  |  **0.9338**   |            |
-|    Ave Sen.    | **0.5663**  | **0.8342**  |  **0.8475**   |            |
+| Synthetic Sen. | **0.6734**  | **0.8815**  |  **0.9338**   | **0.9448** |
+|    Ave Sen.    | **0.5663**  | **0.8342**  |  **0.8475**   | **0.8112** |
 
 ## Ablation Study on Shape Generation(Unet)
 
