@@ -1,6 +1,6 @@
 # **Synthetic Tumors - Personal Modifications and Replication Work in Progress**
 
-This forked repository encapsulates my personal modifications and ongoing replication endeavors based on the original repository available at https://github.com/MrGiovanni/SyntheticTumors. The primary focus of this replication effort lies in reproducing the findings detailed in the paper titled "Label-Free Liver Tumor Segmentation." The provided data tables showcase my attempts at replicating the reported results and conducting additional experiments as part of this replication process. It's important to note that the information presented here reflects my individual efforts to validate and reproduce the referenced paper's methods, and may deviate to an extent from the original work. **Furthermore, I'd like to emphasize that the ultimate ownership of the current paper and code accomplishments resides with the original author(s).** Updates and further details pertaining to this replication work will be continually added as the process unfolds.
+This forked repository encapsulates my personal modifications and ongoing replication endeavors based on the original repository available at https://github.com/MrGiovanni/SyntheticTumors. The primary focus of this replication effort lies in reproducing the findings detailed in the paper titled "Label-Free Liver Tumor Segmentation." The provided data tables showcase my attempts at replicating the reported results and conducting additional experiments as part of this replication process. It's important to note that the information presented here reflects my individual efforts to validate and reproduce the referenced paper's methods, and may deviate to an extent from the original work. **Furthermore,the ultimate ownership of the current paper and code accomplishments resides with the original author(s).** Updates and further details pertaining to this replication work will be continually added as the process unfolds.
 
 ## Default Evaluation
 
@@ -63,7 +63,7 @@ This forked repository encapsulates my personal modifications and ongoing replic
 |                |  0-5(Tiny)  | 5-10(Small) | 10-20(Medium) | >20(Large) |
 | :------------: | :---------: | :---------: | :-----------: | :--------: |
 |  Sample Num.   |     134     |     111     |      139      |     53     |
-|   Real Sen.    | **0.45.93** | **0.7870**  |  **0.7612**   | **0.6776** |
+|   Real Sen.    | **0.4593** | **0.7870**  |  **0.7612**   | **0.6776** |
 | Synthetic Sen. | **0.6734**  | **0.8815**  |  **0.9338**   | **0.9448** |
 |    Ave Sen.    | **0.5663**  | **0.8342**  |  **0.8475**   | **0.8112** |
 
