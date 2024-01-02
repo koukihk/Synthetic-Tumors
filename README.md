@@ -12,7 +12,6 @@ This forked repository encapsulates my personal modifications and ongoing replic
 |       Liver Nsd       |     **0.87736**      |         **0.88440**         |          **0.89196**          |          **0.88591**           |          **0.87198**          |
 |      Tumor Dice       | **0.57766** - 0.5981 |    **0.55722** - 0.5594     |     **0.53344** - 0.5594      |      **0.54794** - 0.5637      |     **0.52479** - 0.5510      |
 |       Tumor Nsd       | **0.61974** - 0.6128 |    **0.60019** - 0.5820     |     **0.57556** - 0.5820      |      **0.57665** - 0.5824      |     **0.54078** - 0.5561      |
-| Detection Sensitivity |          /           |          / - 0.832          |           / - 0.832           |           / - 0.814            |           / - 0.85            |
 
 */: No data available for this item.*
 
@@ -26,7 +25,7 @@ This forked repository encapsulates my personal modifications and ongoing replic
 |       Liver Nsd       |     **0.85500**      |           **0.88934**            |           **0.90179**           |          **0.88162**           |          **0.87801**          |
 |      Tumor Dice       | **0.53054** - 0.5763 | **0.55744** - 0.5902 - (0.5592)† | **0.59590** - 0.5902- (0.5592)† |      **0.55345** - 0.5849      |     **0.54777** - 0.5592      |
 |       Tumor Nsd       | **0.55023** - 0.5810 |       **0.59046** - 0.6082       |      **0.61910** - 0.6082       |      **0.59696** - 0.5986      |     **0.56614** - 0.5655      |
-| Detection Sensitivity |          /           |            / - 0.868             |            / - 0.868            |           / - 0.885            |           / - 0.858           |
+
 #### AI model trained by synthetic tumors(Self)
 
 |                       |  UNET (no.pretrain)  | Swin-UNETR-Base  (pretrain) | Swin-UNETR-Base (no.pretrain) | Swin-UNETR-Small (no.pretrain) | Swin-UNETR-Tiny (no.pretrain) |
@@ -36,7 +35,6 @@ This forked repository encapsulates my personal modifications and ongoing replic
 |       Liver Nsd       |     **0.89170**      |         **0.89265**         |          **0.88995**          |          **0.88962**           |          **0.88353**          |
 |      Tumor Dice       | **0.57500** - 0.5981 |    **0.57025** - 0.5594     |     **0.55158** - 0.5594      |      **0.54079** - 0.5637      |     **0.53372** - 0.5510      |
 |       Tumor Nsd       | **0.62084** - 0.6128 |    **0.60829** - 0.5820     |      **0.60278** - 0.582      |      **0.58507** - 0.5824      |     **0.56287** - 0.5561      |
-| Detection Sensitivity |          /           |          / - 0.832          |           / - 0.832           |           / - 0.814            |           / - 0.85            |
 
 #### AI model trained by real tumors for comparison(Self)
 
@@ -47,7 +45,6 @@ This forked repository encapsulates my personal modifications and ongoing replic
 |       Liver Nsd       |     **0.87500**      |           **0.89222**           |          **0.88773**           |          **0.88408**           |          **0.87628**          |
 |      Tumor Dice       | **0.56542** - 0.5763 | **0.58100**- 0.5902 - (0.5592)† | **0.54147**- 0.5902- (0.5592)† |      **0.56391**- 0.5849       |      **0.53814**- 0.5592      |
 |       Tumor Nsd       | **0.58887** - 0.5810 |       **0.61395**- 0.6082       |      **0.55647** - 0.6082      |      **0.59873**- 0.5986       |     **0.54783** - 0.5655      |
-| Detection Sensitivity |          /           |            / - 0.868            |           / - 0.868            |           / - 0.885            |           / - 0.858           |
 
 *†:The 5-fold cross validation results are provided by Tang et al.* 
 
